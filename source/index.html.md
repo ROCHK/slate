@@ -45,17 +45,17 @@ firebase.initializeApp(config);
 
 // Sign in with email and password
 firebase.auth().signInWithEmailAndPassword(email, password)
-.then(function(user) {
-  // Sign in successfully
-})
-.catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
+  .then(function(user) {
+    // Sign in successfully
+  })
+  .catch(function(error) {
+    // Handle Errors here (Cannot Sign in)
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
 });
 
-// After login
+// After login successfully
 function everyRequest() {
   const URL = 'BASE_URL/api_you_want_to_use';
   if (firebase.auth().currentUser) {
@@ -87,17 +87,17 @@ function everyRequest() {
   
   // Sign in with email and password
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(function(user) {
-    // Sign in successfully
-  })
-  .catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
+    .then(function(user) {
+      // Sign in successfully
+    })
+    .catch(function(error) {
+      // Handle Errors here (Cannot Sign in)
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
 
-  // After login
+  // After login successfully
   function everyRequest() {
     if (firebase.auth().currentUser) {
       user.getToken().then(function(token) {
