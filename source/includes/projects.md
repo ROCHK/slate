@@ -2,7 +2,7 @@
 
 ## The Project Object
 
-This is an object representing a project and it contains the following attributes:
+This is an object representing a project and it has the following attributes:
 
 ### Attributes
 
