@@ -2,8 +2,8 @@
 title: Dasloop API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - http
-  - javascript
+  # - http
+  # - javascript
 
 toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
@@ -24,14 +24,9 @@ Welcome to the Dasloop API!
 
 # Authentication
 
-We use firebase as our authentication service. To use our Api, you need to get the firebase access token and attach the access token to every API request to our server.
-
-For more details, please visit <a href='https://firebase.google.com/docs/auth/web/password-auth?authuser=0]: https://firebase.google.com/docs/auth/web/password-auth?authuser=0'>Firebase Documentation</a>
+> Authentication Example (Node.js)
 
 ```javascript
-
-// node.js
-
 // Install the firebase library by `npm install firebase` before adding the following code. 
 
 // import the request library
@@ -117,3 +112,8 @@ function everyRequest() {
     }
   }
 </script>
+```
+
+We use firebase as our authentication service. To use our Api, you need to get the firebase access token and attach the access token to every API request to our server.
+
+For more details, please visit <a href='https://firebase.google.com/docs/auth/web/password-auth?authuser=0]: https://firebase.google.com/docs/auth/web/password-auth?authuser=0'>Firebase Documentation</a>
