@@ -86,11 +86,11 @@ Retrieves the details of a project that has previously been created. Supply a un
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the Project
+ID | The ID of the project
 
 ### Returns
 
-Returns a Project object if a valid Project ID was provided, and returns an error otherwise.
+Returns a project object if a valid project ID was provided, and returns an error otherwise.
 
 ## List All Projects
 
