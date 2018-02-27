@@ -2,22 +2,31 @@
 
 ## The Project Object
 
-#### Attributes
+This is an object representing a project and it contains the following attributes:
+
+### Attributes
 
 Attribute | Description
 --------- | -----------
-id | The hashed ID of the Project
-name | The name of the Project
-number | something
-siteAgent | something
-siteAgentPhone | something
+id | ID of the project
+number | The serial number of the project
+name | Name of the project
+client | Name of the client
+contractor | Name of the contractor
+siteAgent | Name of the site agent
+siteAgentPhone | Phone number of the site agent
+manager | Name of the site manager
+managerPhone | Phone number of the site manager
+startDate | Project's starting date
+endDate | Project's target completion date
+boundary | List of coordinates and shape type denoting the project's site area
 
 ## Retrieve a Project
 
 > Example Request
 
 ```http
-GET http://localhost:8999/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD
+GET https://api.dasloop.com/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD
 ```
 
 > Example Response
@@ -53,16 +62,16 @@ GET http://localhost:8999/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD
         ],
         "type": "MultiPolygon"
     },
-    "client": "DTT",
-    "contractor": "DTT",
+    "client": "Client",
+    "contractor": "Contractor",
     "endDate": 1515772800000,
     "id": "9Z7yj5mgzEVqBygroaeJ0Nl2bOMD",
-    "manager": "Me",
-    "managerPhone": "1233211234",
-    "name": "TestProject",
+    "manager": "Mr. Lee",
+    "managerPhone": "23456789",
+    "name": "Project 1",
     "number": "1",
-    "siteAgent": "You",
-    "siteAgentPhone": "2344324567",
+    "siteAgent": "Mr. Leung",
+    "siteAgentPhone": "98765432",
     "startDate": 1515772800000
 }
 ```
@@ -71,7 +80,7 @@ Retrieves the details of a project that has previously been created. Supply a un
 
 ### HTTP Request
 
-`GET http://localhost:8999/projects/<ID>`
+`GET https://api.dasloop.com/<ID>`
 
 #### URL Parameters
 
@@ -83,59 +92,39 @@ ID | The ID of the Project
 
 Returns a Project object if a valid Project ID was provided, and returns an error otherwise.
 
-## List Existing Projects
+## List All Projects
 
 > Example Response
 
 ```json
 [
 	{
-		"boundary": {
-			"coordinates": [
-				[
-					[
-						[
-							114.20519828796388,
-							22.431974847069927
-						],
-						[
-							114.21472549438477,
-							22.42578648885657
-						],
-						[
-							114.21279430389404,
-							22.4234856186585
-						],
-						[
-							114.20296669006348,
-							22.42979308559739
-						],
-						[
-							114.20519828796388,
-							22.431974847069927
-						]
-					]
-				]
-			],
-			"type": "MultiPolygon"
-		},
-		"client": "DTT",
-		"contractor": "DTT",
-		"endDate": 1515772800000,
-		"id": "9Z7yj5mgzEVqBygroaeJ0Nl2bOMD",
-		"manager": "Me",
-		"managerPhone": "1233211234",
-		"name": "TestProject",
+		...
+		"name": "Project 1",
 		"number": "1",
-		"siteAgent": "You",
-		"siteAgentPhone": "2344324567",
-		"startDate": 1515772800000
+		...
+	},
+	{
+		...
+		"name": "Project 2",
+		"number": "2",
+		...
+	},
+	{
+		...
+		"name": "Project 3",
+		"number": "3",
+		...
 	}
 ]
 ```
 
 ### HTTP Request
 
-`GET http://localhost:8999/projects`
+`GET https://api.dasloop.com/projects`
+
+### Returns
+
+Returns a list of projects associated to the authenticated user.
 
 ## Notification
