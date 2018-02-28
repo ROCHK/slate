@@ -13,7 +13,7 @@ type | The type of the device, such as dasloop, gas detector, camera, etc
 alerts | List of alerts associated with the device
 worker | The worker assigned to the device. Refer to <a href="#workers">Workers</a> for more information
 
-## Retrieve Device Information
+## Retrieve a Device
 
 > Example Request
 
@@ -42,7 +42,7 @@ worker | The worker assigned to the device. Refer to <a href="#workers">Workers<
         "name": "Lee Ho Ming",
         "phone": "23456789",
         "registrationNumber": "A1234567",
-        "remarks": "1",
+        "remarks": "Nil",
         "trade": "Plumber"
     }
 }
@@ -54,7 +54,7 @@ Retrieves the details of a device that has previously been created and assigned 
 
 `GET https://api.dasloop.com/projects/<ProjectID>/devices/<DeviceID>`
 
-#### URL Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------
@@ -100,7 +100,7 @@ Returns a device object if both ProjectID and DeviceID were valid, and returns a
             "name": "Lee Ho Ming",
             "phone": "23456789",
             "registrationNumber": "A1234567",
-            "remarks": "1",
+            "remarks": "Nil",
             "trade": "Plumber"
         }
     }
@@ -113,7 +113,7 @@ List out all devices associated with a project.
 
 `GET https://api.dasloop.com/projects/<ProjectID>/devices`
 
-#### URL Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------

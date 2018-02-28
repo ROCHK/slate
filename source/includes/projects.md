@@ -82,7 +82,7 @@ Retrieves the details of a project that has previously been created. Supply a un
 
 `GET https://api.dasloop.com/<ID>`
 
-#### URL Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------
