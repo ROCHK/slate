@@ -1,0 +1,135 @@
+<h1 id='devices'>Devices</h1><h2 id='the-device-object'>The Device Object</h2>
+<p>This is an object representing a device and it has the following attributes:</p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>ID of the device</td>
+</tr>
+<tr>
+<td>type</td>
+<td>The type of the device, such as dasloop, gas detector, camera, etc</td>
+</tr>
+<tr>
+<td>alerts</td>
+<td>List of alerts associated with the device</td>
+</tr>
+<tr>
+<td>worker</td>
+<td>The worker assigned to the device. Refer to <a href="#workers">Workers</a> for more information</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-a-device'>Retrieve a Device</h2>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">`GET https://api.dasloop.com/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD/devices/2`
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gasdetector"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"alerts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"worker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dasloop"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wong Chun Ming"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98765431"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"division"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumbing"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leehoming@dasloop.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lee Ho Ming"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nil"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumber"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves the details of a device that has previously been created and assigned to the project being specified. Supply both Project ID and Device ID and the corresponding device information will be returned.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.dasloop.com/projects/&lt;ProjectID&gt;/devices/&lt;DeviceID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ProjectID</td>
+<td>The ID of the project</td>
+</tr>
+<tr>
+<td>DeviceID</td>
+<td>The ID of the device</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a device object if both ProjectID and DeviceID were valid, and returns an error otherwise.</p>
+<h2 id='list-all-devices'>List All Devices</h2>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">`GET http://localhost:8999/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD/devices`
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dasloop"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"alerts"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gasdetector"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"alerts"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"worker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dasloop"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wong Chun Ming"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98765431"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"division"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumbing"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leehoming@dasloop.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lee Ho Ming"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456789"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1234567"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nil"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumber"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>List out all devices associated with a project.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.dasloop.com/projects/&lt;ProjectID&gt;/devices</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ProjectID</td>
+<td>The ID of the project</td>
+</tr>
+</tbody></table>
+<h3 id='returns-2'>Returns</h3>
+<p>Returns a list of devices assigned to the project.</p>

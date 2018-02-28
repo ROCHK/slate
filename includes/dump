@@ -1,0 +1,5 @@
+<h1 id='devices'>Devices</h1><h2 id='add-new-device'>Add New Device</h2>
+<p>Add a device to a project.</p>
+<h2 id='worker-assignment'>Worker Assignment</h2><h3 id='assign-worker'>Assign Worker</h3>
+<p>Assign an existing worker to a device.</p>
+<h3 id='unassign-worker'>Unassign Worker</h3><h2 id='camera-assignment'>Camera Assignment</h2><h3 id='assign-camera-to-device'>Assign Camera to Device</h3><h3 id='unassign-camera-to-device'>Unassign Camera to Device</h3><h2 id='alerts'>Alerts</h2><h3 id='dismiss-an-alert'>Dismiss an Alert</h3><h3 id='dismiss-all-alerts'>Dismiss All Alerts</h3><h3 id='check-if-alert-has-been-dismissed'>Check if Alert Has Been Dismissed</h3><h2 id='delete-device'>Delete Device</h2><h2 id='create-new-project'>Create New Project</h2><h2 id='update-project'>Update Project</h2><h1 id='users'>Users</h1><h2 id='create-user'>Create User</h2><h2 id='get-user'>Get User</h2><h2 id='create-new-worker'>Create New Worker</h2>

@@ -1,0 +1,156 @@
+<h1 id='projects'>Projects</h1><h2 id='the-project-object'>The Project Object</h2>
+<p>This is an object representing a project and it has the following attributes:</p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>ID of the project</td>
+</tr>
+<tr>
+<td>number</td>
+<td>The serial number of the project</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the project</td>
+</tr>
+<tr>
+<td>client</td>
+<td>Name of the client</td>
+</tr>
+<tr>
+<td>contractor</td>
+<td>Name of the contractor</td>
+</tr>
+<tr>
+<td>siteAgent</td>
+<td>Name of the site agent</td>
+</tr>
+<tr>
+<td>siteAgentPhone</td>
+<td>Phone number of the site agent</td>
+</tr>
+<tr>
+<td>manager</td>
+<td>Name of the site manager</td>
+</tr>
+<tr>
+<td>managerPhone</td>
+<td>Phone number of the site manager</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>Project&#39;s starting date</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>Project&#39;s target completion date</td>
+</tr>
+<tr>
+<td>boundary</td>
+<td>List of coordinates and shape type denoting the project&#39;s site area</td>
+</tr>
+</tbody></table>
+<h2 id='retrieve-a-project'>Retrieve a Project</h2>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">GET https://api.dasloop.com/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"boundary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="w">
+                </span><span class="p">[</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mf">114.20519828796388</span><span class="p">,</span><span class="w">
+                        </span><span class="mf">22.431974847069927</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mf">114.21472549438477</span><span class="p">,</span><span class="w">
+                        </span><span class="mf">22.42578648885657</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mf">114.21279430389404</span><span class="p">,</span><span class="w">
+                        </span><span class="mf">22.4234856186585</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mf">114.20296669006348</span><span class="p">,</span><span class="w">
+                        </span><span class="mf">22.42979308559739</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="p">[</span><span class="w">
+                        </span><span class="mf">114.20519828796388</span><span class="p">,</span><span class="w">
+                        </span><span class="mf">22.431974847069927</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MultiPolygon"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"client"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contractor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Contractor"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1515772800000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"manager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Lee"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"managerPhone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"siteAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr. Leung"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"siteAgentPhone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98765432"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1515772800000</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Retrieves the details of a project that has previously been created. Supply a unique Project ID and the corresponding project information will be returned.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.dasloop.com/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the project</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a project object if a valid project ID was provided, and returns an error otherwise.</p>
+<h2 id='list-all-projects'>List All Projects</h2>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project 3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.dasloop.com/projects</code></p>
+<h3 id='returns-2'>Returns</h3>
+<p>Returns a list of projects associated to the authenticated user.</p>
+<h2 id='notification'>Notification</h2>

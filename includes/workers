@@ -1,0 +1,129 @@
+<h1 id='workers'>Workers</h1><h2 id='the-worker-object'>The Worker Object</h2>
+<blockquote>
+<p>Example Object</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dasloop"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wong Chun Ming"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"98765431"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"division"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumbing"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leehoming@dasloop.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lee Ho Ming"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1234567"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nil"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumber"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This is an object representing a worker and it has the following attributes:</p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>registrationNumber</td>
+<td>The worker&#39;s registration number</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Name of the worker</td>
+</tr>
+<tr>
+<td>age</td>
+<td>Age of the worker</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>Gender of the worker</td>
+</tr>
+<tr>
+<td>id</td>
+<td>ID of the assigned project, if assigned to one</td>
+</tr>
+<tr>
+<td>company</td>
+<td>Company the worker is working for</td>
+</tr>
+<tr>
+<td>division</td>
+<td>Division of the worker</td>
+</tr>
+<tr>
+<td>trade</td>
+<td>Trade of the worker</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>Phone number of the worker</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Email of the worker</td>
+</tr>
+<tr>
+<td>contactPerson</td>
+<td>Name and phone number of the worker&#39;s contact person</td>
+</tr>
+<tr>
+<td>remarks</td>
+<td>Remarks left for the worker</td>
+</tr>
+</tbody></table>
+<h2 id='list-all-workers-associated-with-a-project'>List All Workers Associated with a Project</h2>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight http tab-http"><code><span class="err">GET https://api.dasloop.com/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD/workers
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lee Ho Ming"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B23456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wong Chun Ming"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9Z7yj5mgzEVqBygroaeJ0Nl2bOMD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C34567890"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chan Tai Man"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>List out all workers associated with a project.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.dasloop.com/projects/&lt;ProjectID&gt;/workers</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ProjectID</td>
+<td>The ID of the project</td>
+</tr>
+</tbody></table>
+<h3 id='returns'>Returns</h3>
+<p>Returns a list of workers assigned to the project.</p>
