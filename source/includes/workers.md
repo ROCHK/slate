@@ -46,7 +46,9 @@ remarks | Remarks left for the worker
 
 > Example Request
 
-`GET https://api.dasloop.com/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD/workers`
+```http
+GET https://api.dasloop.com/projects/9Z7yj5mgzEVqBygroaeJ0Nl2bOMD/workers
+```
 
 > Example Response
 
