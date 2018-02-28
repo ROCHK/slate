@@ -1,58 +1,65 @@
-####
-# GitLab Pages Basic Configuration
-####
-###
-# Page options, layouts, aliases and proxies
-###
-# With no layout
-page '/*.xml', layout: false
-page '/*.json', layout: false
-page '/*.txt', layout: false
-###
-# General configuration
-###
-activate :directory_indexes # Pretty urls - instead of 'example.com/about.html' -> 'example.com/about'
-###
-# Local: development mode
-###
+# Unique header generation
+require './lib/unique_head.rb'
+
+# Markdown
+set :markdown_engine, :redcarpet
+set :markdown,
+    fenced_code_blocks: true,
+    smartypants: true,
+    disable_indented_code_blocks: true,
+    prettify: true,
+    tables: true,
+    with_toc_data: true,
+    no_intra_emphasis: true,
+    renderer: UniqueHeadCounter
+
+# Assets
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+set :fonts_dir, 'fonts'
+
+# Activate the syntax highlighter
+activate :syntax
+ready do
+  require './lib/multilang.rb'
+end
+
+activate :sprockets
+
+activate :autoprefixer do |config|
+  config.browsers = ['last 2 version', 'Firefox ESR']
+  config.cascade  = false
+  config.inline   = true
+end
+
+# Github pages require relative links
+activate :relative_assets
+set :relative_links, true
+
 # Local development config # Run: 'bundle exec middleman server'
 configure :development do
   # activate :livereload # Reload the browser automatically whenever files change
   set :base_url, "" # Setting empty baseurl
 end
-###
-# Live: production mode
-###
-# Build-specific configuration # Run: 'bundle exec middleman build'
+
+# Build Configuration
 configure :build do
-  activate :minify_css # Minify CSS on build
-  activate :minify_javascript # Minify Javascript on build
+  # If you're having trouble with Middleman hanging, commenting
+  # out the following two lines has been known to help
+  activate :minify_css
+  activate :minify_javascript
   set :base_url, "/middleman" # baseurl for GitLab Pages (project name) - leave empty if you're building a user/group website
   set :build_dir, 'public' # set the build directory to GitLab Pages 'public' folder
-  activate :relative_assets # Use relative URLs
+  activate :relative_assets
+  # activate :asset_hash
+  # activate :gzip
 end
-#################################
-#################################
-####
-# More Options
-####
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
-###
-# Helpers
-###
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
-# Redirects
-# redirect "something/index.html", to: "/something/somethingelse"
-# Setting custom directories for css, js and images
-# set :css_dir, 'assets/css'
-# set :js_dir, 'assets/js'
-# set :images_dir, 'assets/img'
+
+# Deploy Configuration
+# If you want Middleman to listen on a different port, you can set that below
+set :port, 4567
+
+helpers do
+  require './lib/toc_data.rb'
+end
